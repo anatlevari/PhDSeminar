@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsthm, amssymb,latexsym}
+\usepackage{bbm}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {$y=v'(x)$},
+    ylabel = {$F(y)$},
+    legend style={at={(1.65,0.97)},
+    anchor=north east},
+    xmin=0, xmax=6,
+    ymin=-14, ymax=14,
+]
+\centering
+
+\addplot [
+     color=black,
+     mark=otimes*,
+     ]
+     coordinates {
+    (0,-1) (0.25,-0.75) (0.5,-0.5) (0.75,-0.25) (1,0) (1.25,0.75) (1.5,1.5) (1.75,2.5) (2,3)
+     (2.25,3.75) (2.5,4.5) (2.75,5.25) (3,6) (3.25,7.25) (3.5,8.5) (3.75,9.75) (4,11)
+     (4.25,12.25) (4.5, 13.5) };
+\addlegendentry{$F(y)=\max \{\varphi_i(y)\}$}
+
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
